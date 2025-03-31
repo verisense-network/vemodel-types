@@ -10,7 +10,7 @@ https://github.com/verisense-network/veforum/blob/main/vemodel/src/lib.rs
 
 ```ts
 import { registry, CommunityId } from "@verisense-network/vemodel-types";
-import { Result } from "@verisense-network/vemodel-types/codec";
+import { Result } from "@verisense-network/vemodel-types/dist/codec";
 
 const communityId = new CommunityId(registry, Buffer.from("xxx"));
 
