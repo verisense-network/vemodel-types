@@ -1,57 +1,3 @@
-var __defProp = Object.defineProperty;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __getOwnPropNames = Object.getOwnPropertyNames;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __export = (target, all) => {
-  for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
-};
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
-    for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
-  return to;
-};
-var __reExport = (target, mod, secondTarget) => (__copyProps(target, mod, "default"), secondTarget && __copyProps(secondTarget, mod, "default"));
-
-// src/index.ts
-var index_exports = {};
-__export(index_exports, {
-  Account: () => Account,
-  AccountData: () => AccountData,
-  AccountId: () => AccountId,
-  ActivateCommunityArg: () => ActivateCommunityArg,
-  Community: () => Community,
-  CommunityId: () => CommunityId,
-  CommunityStatus: () => CommunityStatus,
-  ContentId: () => ContentId,
-  CreateCommunityArg: () => CreateCommunityArg,
-  CreateCommunityPayload: () => CreateCommunityPayload,
-  EcdsaSignature: () => EcdsaSignature,
-  EventId: () => EventId,
-  GenerateInviteCodeArgs: () => GenerateInviteCodeArgs,
-  GenerateInviteCodePayload: () => GenerateInviteCodePayload,
-  H160: () => H160,
-  InviteUserArg: () => InviteUserArg,
-  InviteUserPayload: () => InviteUserPayload,
-  LLmName: () => LLmName,
-  LlmVendor: () => LlmVendor,
-  PostCommentArg: () => PostCommentArg,
-  PostCommentPayload: () => PostCommentPayload,
-  PostThreadArg: () => PostThreadArg,
-  PostThreadPayload: () => PostThreadPayload,
-  Pubkey: () => Pubkey,
-  RewardPayload: () => RewardPayload,
-  SetAliasArg: () => SetAliasArg,
-  SetAliasPayload: () => SetAliasPayload,
-  TokenMetadata: () => TokenMetadata,
-  TokenMetadataArg: () => TokenMetadataArg,
-  createWithArgs: () => createWithArgs,
-  registry: () => registry
-});
-
 // src/types.ts
 import { TypeRegistry } from "@polkadot/types";
 import {
@@ -230,14 +176,6 @@ registry.register({
   GenerateInviteCodePayload,
   GenerateInviteCodeArgs
 });
-
-// src/codec.ts
-var codec_exports = {};
-__reExport(codec_exports, types_codec_star);
-import * as types_codec_star from "@polkadot/types-codec";
-
-// src/index.ts
-__reExport(index_exports, codec_exports);
 export {
   Account,
   AccountData,

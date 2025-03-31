@@ -6,23 +6,11 @@ verisense veforum vemodel types typescript package
 https://github.com/verisense-network/veforum/blob/main/vemodel/src/lib.rs
 ```
 
-## Requirements
-
-- @polkadot/types
-- @polkadot/types-codec
-
-```sh
-npm install @polkadot/types @polkadot/types-codec
-// or
-pnpm install @polkadot/types @polkadot/types-codec
-// or
-yarn add @polkadot/types @polkadot/types-codec
-```
-
 ## How to use
 
 ```ts
 import { registry, CommunityId } from "@verisense-network/vemodel-types";
+import { Result } from "@verisense-network/vemodel-types/codec";
 
 const communityId = new CommunityId(registry, Buffer.from("xxx"));
 
