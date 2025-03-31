@@ -1,0 +1,26 @@
+{
+	"name": "@verisense/vemodel-types",
+	"version": "1.0.0",
+	"description": "verisense veforum vemodel types typescript package",
+	"author": "",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist/index.js",
+		"dist/index.d.ts"
+	],
+	"scripts": {
+		"start": "tsup --watch",
+		"build": "tsup"
+	},
+	"dependencies": {
+		"@polkadot/types": "^15.8.1",
+		"@polkadot/types-codec": "^15.8.1"
+	},
+	"devDependencies": {
+		"tsup": "^8.4.0",
+		"typescript": "^5.8.2"
+	},
+	"packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af"
+}
