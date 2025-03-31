@@ -1,6 +1,7 @@
 import * as _polkadot_types_codec_base_Enum from '@polkadot/types-codec/base/Enum';
 import { TypeRegistry } from '@polkadot/types';
 import { U8aFixed, u32, u64, u128, Struct, Text, u8, Option, Enum, Bool, i64, Vec } from '@polkadot/types-codec';
+export * from '@polkadot/types-codec';
 import { Codec, CodecClass, Registry, AnyU8a, U8aBitLength } from '@polkadot/types-codec/types';
 
 type TypesDef<T = Codec> = Record<string, string | CodecClass<T>>;
