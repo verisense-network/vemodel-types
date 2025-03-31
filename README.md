@@ -1,6 +1,10 @@
 verisense veforum vemodel types typescript package
 
-- https://github.com/verisense-network/veforum/blob/main/vemodel/src/lib.rs
+[![NPM version](https://badge.fury.io/js/nodemon.svg)](https://www.npmjs.com/package/@verisense-network/vemodel-types)
+
+```
+https://github.com/verisense-network/veforum/blob/main/vemodel/src/lib.rs
+```
 
 ## Requirements
 
