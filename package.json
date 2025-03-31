@@ -12,6 +12,7 @@
 		"dist/codec/index.js",
 		"dist/codec/index.d.ts"
 	],
+	"homepage": "https://github.com/verisense-network/vemodel-types",
 	"scripts": {
 		"start": "tsup --watch",
 		"build": "tsup"
