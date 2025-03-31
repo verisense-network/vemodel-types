@@ -9,8 +9,8 @@
 	"files": [
 		"dist/index.js",
 		"dist/index.d.ts",
-		"dist/codec.js",
-		"dist/codec.d.ts"
+		"dist/codec/index.js",
+		"dist/codec/index.d.ts"
 	],
 	"scripts": {
 		"start": "tsup --watch",
