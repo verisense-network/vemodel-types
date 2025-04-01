@@ -80,17 +80,21 @@ export const ContentId = u128;
 /**
  * 
 pub struct TokenMetadata {
+    pub name: String,
     pub symbol: String,
     pub total_issuance: u64,
     pub decimals: u8,
+    pub new_issue: bool,
     pub contract: AccountId,
     pub image: Option<String>,
 }
  */
 export const TokenMetadata = Struct.with({
+  name: Text,
   symbol: Text,
   total_issuance: u64,
   decimals: u8,
+  new_issue: Bool,
   contract: AccountId,
   image: Option.with(Text),
 });
@@ -111,7 +115,7 @@ export const LlmVendor = Enum.with({
  * 
 pub enum CommunityStatus {
     PendingCreation,
-    WaitingTx(u64),
+    WaitingTx(u128),
     CreateFailed(String),
     Active,
     Frozen(u64),
@@ -120,7 +124,7 @@ pub enum CommunityStatus {
  */
 export const CommunityStatus = Enum.with({
   PendingCreation: Null,
-  WaitingTx: u64,
+  WaitingTx: u128,
   CreateFailed: Text,
   Active: Null,
   Frozen: u64,
