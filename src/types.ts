@@ -158,14 +158,24 @@ export type CommunityStatus = {
   TokenIssued: string;
 };
 
+export type CommunityMode = {
+  Public: null;
+  InviteOnly: number;
+  PayToJoin: number;
+};
+
 export type Community = {
   id: string;
+  mode: CommunityMode;
   logo: string;
   name: string;
   slug: string;
   description: string;
   token_info: TokenMetadata;
+  agent_contract: string | null;
   prompt: string;
+  platform_bnb_benefit: number;
+  creator_bnb_benefit: number;
   creator: AccountId;
   agent_pubkey: AccountId;
   // llm_vendor: LlmVendor;
@@ -177,15 +187,32 @@ export type Community = {
 
 /**
  * 
+pub enum CommunityMode {
+    Public,
+    InviteOnly(u128),
+    PayToJoin(u128),
+}
+ */
+export const CommunityMode = Enum.with({
+  Public: Null,
+  InviteOnly: u128,
+  PayToJoin: u128,
+});
+
+/**
+ * 
 pub struct Community {
     pub id: String,
-    pub private: bool,
+    pub mode: CommunityMode,
     pub logo: String,
     pub name: String,
     pub slug: String,
     pub description: String,
     pub token_info: TokenMetadata,
+    pub agent_contract: Option<AccountId>,
     pub prompt: String,
+    pub platform_bnb_benefit: u64,
+    pub creator_bnb_benefit: u64,
     pub creator: AccountId,
     pub agent_pubkey: AccountId,
     pub llm_vendor: LlmVendor,
@@ -196,13 +223,16 @@ pub struct Community {
  */
 export const Community = Struct.with({
   id: Text,
-  private: Bool,
+  mode: CommunityMode,
   logo: Text,
   name: Text,
   slug: Text,
   description: Text,
   token_info: TokenMetadata,
+  agent_contract: Option.with(AccountId),
   prompt: Text,
+  platform_bnb_benefit: u64,
+  creator_bnb_benefit: u64,
   creator: AccountId,
   agent_pubkey: AccountId,
   llm_vendor: LlmVendor,
@@ -262,7 +292,7 @@ export const TokenMetadataArg = Struct.with({
 /**
     pub struct CreateCommunityArg {
         pub name: String,
-        pub private: bool,
+        pub mode: CommunityMode,
         pub logo: String,
         pub token: TokenMetadataArg,
         pub slug: String,
@@ -275,7 +305,7 @@ export const TokenMetadataArg = Struct.with({
  */
 export const CreateCommunityPayload = Struct.with({
   name: Text,
-  private: Bool,
+  mode: CommunityMode,
   logo: Text,
   token: TokenMetadataArg,
   slug: Text,
@@ -342,17 +372,17 @@ export const ActivateCommunityArg = Struct.with({
 pub struct Account {
     pub nonce: u64,
     pub address: H160,
-    pub max_invite_block: u64,
+    pub last_transfer_block: u64,
     pub alias: Option<String>,
-    pub last_post_at: i64,
+    pub last_post_at: u64,
 }
  */
 export const Account = Struct.with({
   nonce: u64,
   address: H160,
-  max_invite_block: u64,
+  last_transfer_block: u64,
   alias: Option.with(Text),
-  last_post_at: i64,
+  last_post_at: u64,
 });
 
 /**
@@ -440,6 +470,9 @@ registry.register({
   PostThreadArg,
   ActivateCommunityArg,
   PostCommentArg,
+  TokenMetadata,
+  Community,
+  CommunityMode,
   AccountData,
   SetAliasArg,
   RewardPayload,
