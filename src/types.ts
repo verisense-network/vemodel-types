@@ -57,7 +57,15 @@ export class H160 extends U8aFixed {
   }
 }
 
+registry.register({
+  H160,
+});
+
 export const AccountId = H160;
+
+registry.register({
+  AccountId,
+});
 
 // export const Signature = U8aFixed.with(512);
 /**
@@ -71,11 +79,25 @@ export class EcdsaSignature extends U8aFixed {
   }
 }
 
+registry.register({
+  EcdsaSignature,
+});
+
 export const Pubkey = AccountId;
+
+registry.register({
+  Pubkey,
+});
 
 export const CommunityId = u32;
 export const EventId = u64;
 export const ContentId = u128;
+
+registry.register({
+  CommunityId,
+  EventId,
+  ContentId,
+});
 
 /**
  * 
@@ -448,27 +470,21 @@ export const InviteUserArg = createWithArgs(InviteUserPayload);
 
 /**
  * 
-    pub struct GenerateInviteCodeArgs {
-        pub community: String,
+    pub struct GenerateInviteTicketArgs {
+        pub community_id: CommunityId,
         pub tx: String,
     }
  */
-export const GenerateInviteCodePayload = Struct.with({
-  community: Text,
+export const GenerateInviteTicketArg = Struct.with({
+  community_id: CommunityId,
   tx: Text,
 });
-
-export const GenerateInviteCodeArgs = createWithArgs(GenerateInviteCodePayload);
 
 registry.register({
   EcdsaSignature,
   Account,
-  AccountId,
   H160,
   Pubkey,
-  CommunityId,
-  EventId,
-  ContentId,
   TokenMetadataArg,
   CreateCommunityArg,
   PostThreadArg,
@@ -482,6 +498,5 @@ registry.register({
   RewardPayload,
   InviteUserPayload,
   InviteUserArg,
-  GenerateInviteCodePayload,
-  GenerateInviteCodeArgs,
+  GenerateInviteTicketArg,
 });
