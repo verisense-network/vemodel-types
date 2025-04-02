@@ -215,13 +215,13 @@ export type Community = {
  * 
 pub enum CommunityMode {
     Public,
-    InviteOnly(u128),
+    InviteOnly,
     PayToJoin(u128),
 }
  */
 export const CommunityMode = Enum.with({
   Public: Null,
-  InviteOnly: u128,
+  InviteOnly: Null,
   PayToJoin: u128,
 });
 
