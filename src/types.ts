@@ -480,6 +480,30 @@ export const GenerateInviteTicketArg = Struct.with({
   tx: Text,
 });
 
+/**
+ *     pub struct SetModeArg {
+        pub community: String,
+        pub mode: CommunityMode,
+    }
+ */
+export const SetModePayload = Struct.with({
+  community: Text,
+  mode: CommunityMode,
+});
+
+export const SetModeArg = createWithArgs(SetModePayload);
+
+/**
+ *     pub struct PaysFeeArg {
+        pub community: String,
+        pub tx: String,
+    }
+ */
+export const PaysFeeArg = Struct.with({
+  community: Text,
+  tx: Text,
+});
+
 registry.register({
   EcdsaSignature,
   Account,
@@ -499,4 +523,7 @@ registry.register({
   InviteUserPayload,
   InviteUserArg,
   GenerateInviteTicketArg,
+  SetModePayload,
+  SetModeArg,
+  PaysFeeArg,
 });

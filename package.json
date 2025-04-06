@@ -1,6 +1,6 @@
 {
 	"name": "@verisense-network/vemodel-types",
-	"version": "1.0.11",
+	"version": "1.0.12",
 	"description": "verisense veforum vemodel types typescript package",
 	"author": "verisense-network",
 	"license": "MIT",
