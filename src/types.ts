@@ -104,7 +104,7 @@ registry.register({
 pub struct TokenMetadata {
     pub name: String,
     pub symbol: String,
-    pub total_issuance: u64,
+    pub total_issuance: u128,
     pub decimals: u8,
     pub new_issue: bool,
     pub contract: AccountId,
@@ -114,7 +114,7 @@ pub struct TokenMetadata {
 export const TokenMetadata = Struct.with({
   name: Text,
   symbol: Text,
-  total_issuance: u64,
+  total_issuance: u128,
   decimals: u8,
   new_issue: Bool,
   contract: AccountId,
@@ -298,7 +298,7 @@ export function createWithArgs<T extends CodecClass<Struct<any>>>(
     pub struct TokenMetadataArg {
         pub name: String,
         pub symbol: String,
-        pub total_issuance: u64,
+        pub total_issuance: u128,
         pub decimals: u8,
         pub new_issue: bool,
         pub contract: Option<String>,
@@ -308,7 +308,7 @@ export function createWithArgs<T extends CodecClass<Struct<any>>>(
 export const TokenMetadataArg = Struct.with({
   name: Text,
   symbol: Text,
-  total_issuance: u64,
+  total_issuance: u128,
   decimals: u8,
   new_issue: Bool,
   contract: Option.with(Text),
