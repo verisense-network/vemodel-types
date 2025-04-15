@@ -493,6 +493,27 @@ export const SetModePayload = Struct.with({
 
 export const SetModeArg = createWithArgs(SetModePayload);
 
+
+/**
+ * 
+    pub struct SetCommunityArg {
+        pub community: String,
+        pub logo: String,
+        pub description: String,
+        pub slug: String,
+        pub mode: CommunityMode,
+    }
+ */
+export const SetCommunityPayload = Struct.with({
+  community: Text,
+  logo: Text,
+  description: Text,
+  slug: Text,
+  mode: CommunityMode,
+});
+
+export const SetCommunityArg = createWithArgs(SetCommunityPayload);
+
 /**
  *     pub struct PaysFeeArg {
         pub community: String,
@@ -525,5 +546,7 @@ registry.register({
   GenerateInviteTicketArg,
   SetModePayload,
   SetModeArg,
+  SetCommunityPayload,
+  SetCommunityArg,
   PaysFeeArg,
 });
